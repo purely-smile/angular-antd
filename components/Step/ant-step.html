@@ -1,0 +1,12 @@
+<div [class]="stepClassName">
+  <div [class]="prefixCls+'-tail'"></div>
+  <div [class]="prefixCls+'-step'">
+    <div [class]="prefixCls+ '-head'">
+      <div [class]="prefixCls+'-head-inner'"></div>
+    </div>
+    <div [class]="prefixCls+'-main'">
+      <div [class]="prefixCls+'-title'">{{title}}</div>
+      <div *ngIf="description" [class]="prefixCls+'-description'">{{description}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div [class]="alertClassName">
+  <ant-icon *ngIf="showIcon" [class]="prefixCls+'-icon'" [type]="iconType"></ant-icon>
+  <span #messageEl [class]="prefixCls+'-message'">
+    <ng-content select="[alert-message]"></ng-content>
+  </span>
+  <span #descEl [class]="prefixCls+'-description'">
+    <ng-content select="[alert-desc]"></ng-content>
+  </span>
+</div>

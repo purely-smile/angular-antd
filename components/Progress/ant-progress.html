@@ -1,0 +1,25 @@
+<div [class]="progressClassName">
+  <div *ngIf="type === 'line'">
+    <div class="prefixCls+'-outer'">
+      <div class="prefixCls+'-inner'">
+        <div class="`prefixCls+'-bg'" [ngStyle]="{width: percent+'%',height: strokeWidth || 10}"></div>
+      </div>
+    </div>
+    <span [class]="prefixCls+'-text'">
+      <ant-icon *ngIf="progressStatus ==='exception'" [type]="'cross'+iconType"></ant-icon>
+      <ant-icon *ngIf="progressStatus === 'success'" [type]="'check'+iconType"></ant-icon>
+      <span *ngIf="['exception','success'].indexOf(progressStatus) === -1">{{percent}}%</span>
+    </span>
+  </div>
+
+  <div [class]="prefixCls+'-inner'" [ngStyle]="{width:circleSize,height: circleSize,fontSize: circleSize * 0.16 + 6}">
+    <base-circle-progress [strokeWidth]="circleWidth" [trailWidth]="circleWidth" [strokeColor]="statusColorMap[progressStatus]"
+      [trailColor]="trailColor" [prefixCls]="prefixCls" [gapDegree]="gapDeg" [gapPosition]="gapPos" [percent]="percent">
+    </base-circle-progress>
+    <span [class]="prefixCls+'-text'">
+      <ant-icon *ngIf="progressStatus ==='exception'" [type]="'cross'+iconType"></ant-icon>
+      <ant-icon *ngIf="progressStatus === 'success'" [type]="'check'+iconType"></ant-icon>
+      <span *ngIf="['exception','success'].indexOf(progressStatus) === -1">{{percent}}%</span>
+    </span>
+  </div>
+</div>

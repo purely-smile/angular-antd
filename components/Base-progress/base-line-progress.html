@@ -1,0 +1,7 @@
+<svg [attr.class]="prefixCls+'-line'+className" [attr.viewBox]="viewBoxString" preserveAspectRatio="none">
+  <path [attr.d]="pathString" [attr.strokeLinecap]="strokeLinecap" [attr.stroke]="trailColor" [attr.strokeWidth]="trailWidth || strokeWidth"
+    [attr.fillOpacity]="'0'" [class]="prefixCls+'-line-trail'"></path>
+  <path [attr.d]="pathString" [attr.strokeLinecap]="strokeLinecap" [attr.strokeWidth]="strokeWidth" fillOpacity="0" [attr.style]="pathStyle"
+    [attr.class]="prefixCls+'-line-path'">
+  </path>
+</svg>

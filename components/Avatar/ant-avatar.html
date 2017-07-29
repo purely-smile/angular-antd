@@ -1,0 +1,7 @@
+<span [class]="avatarClassName">
+  <img *ngIf="src && !icon" (error)="handleImgLoadError()" [src]="src"  >
+  <ant-icon *ngIf="icon && !src" [type]="icon"></ant-icon>
+  <span *ngIf="!icon && !src" [class]="prefixCls+'-string'">
+    <ng-content></ng-content>
+  </span>
+</span>

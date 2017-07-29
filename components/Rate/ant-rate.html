@@ -1,0 +1,11 @@
+<ul
+  [class]="rateClassName">
+  <ant-star
+    [index]="index"
+    [disabled]="disabled"
+    [prefixCls]="prefixCls+'-star'"
+    [allowHalf]="allowHalf"
+    [character]="character"
+    *ngFor="let x of items;let i = index">
+    </ant-star>
+</ul>

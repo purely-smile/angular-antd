@@ -1,0 +1,6 @@
+<svg [attr.class]="prefixCls+'-circle '+className" viewBox="0 0 100 100">
+  <path [attr.class]="prefixCls+'-circle-trail'" [attr.d]="pathString" [attr.stroke]="trailColor" [attr.strokeWidth]="trailWidth || strokeWidth"
+    fillOpacity="0" [attr.ngStyle]="trailPathStyle"></path>
+  <path *ngIf="showCirclePath" [attr.class]="prefixCls+'-circle-path'" [attr.d]="pathString" [attr.strokeLinecap]="strokeLinecap"
+    [attr.stroke]="strokeColor" [attr.strokeWidth]="strokeWidth" fillOpacity="0" [attr.ngStyle]="strokePathStyle"></path>
+</svg>

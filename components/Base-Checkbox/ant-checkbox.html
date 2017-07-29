@@ -1,0 +1,13 @@
+<span [class]="checkboxClassName">
+  <input
+    readonly="readOnly"
+    tabIndex="tabIndex"
+    [class]="prefixCls+'-input'"
+    [checked]="checked"
+    [disabled]="disabled"
+    [name]="name"
+    [type]="type">
+  <span [class]="prefixCls+'-inner'">
+  </span>
+</span>
+<ng-content></ng-content>
