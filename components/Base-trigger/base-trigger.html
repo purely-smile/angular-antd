@@ -1,0 +1,5 @@
+<base-popup #triggerEl [destroyPopupOnHide]="destroyPopupOnHide" [visible]="popupVisible" [class]="popupClassName" [action]="action"
+  [mask]="mask" [zIndex]="zIndex" [maskAnimation]="maskAnimation" [maskTransitionName]="maskTransitionName" [prefixCls]="prefixCls">
+  {{overlay}}
+  <ng-content></ng-content>
+</base-popup>

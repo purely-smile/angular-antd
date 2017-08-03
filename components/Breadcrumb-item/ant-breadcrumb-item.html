@@ -1,0 +1,11 @@
+<span>
+  <a *ngIf="href;else elseEl" [class]="prefixCls+'-link'" [href]="href">
+    <ng-container *ngTemplateOutlet="elseEl"></ng-container>
+  </a>
+  <ng-template #elseEl>
+    <span   [class]="prefixCls+'-link'">
+      <ng-content></ng-content>
+    </span>
+</ng-template>
+<span [class]="prefixCls+'-separator'">{{separator}}</span>
+</span>

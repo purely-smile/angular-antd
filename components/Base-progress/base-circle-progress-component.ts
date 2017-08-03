@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 @Component({
   selector: 'base-circle-progress',
   templateUrl: './base-circle-progress.html',
   styleUrls: ['./base-circle-progress.scss']
 })
-export class BaseCircleProgressComponent implements OnInit {
+export class BaseCircleProgressComponent implements OnInit, OnChanges {
   @Input() className = '';
   @Input() percent = 0;
   @Input() prefixCls = 'ant-progress';
@@ -18,8 +18,10 @@ export class BaseCircleProgressComponent implements OnInit {
   public pathString;
   public trailPathStyle;
   public strokePathStyle;
-  ngOnInit() {
+  ngOnInit() {}
+  ngOnChanges() {
     this.getPathStyles();
+    console.log('run here');
   }
   getPathStyles() {
     const { percent, strokeWidth, gapDegree = 0, gapPosition } = this;

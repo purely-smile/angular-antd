@@ -1,8 +1,32 @@
 <div>
   <div>
-    <h2>Progress</h2>
-    <ant-progress type="circle" [percent]="30"></ant-progress>
+    <h2>Message</h2>
+    <ant-button (click)="showMessage()">显示message</ant-button>
   </div>
+  <notification-wrap></notification-wrap>
+  <!-- <div>
+    <h2>Tooltip</h2>
+    <ant-tooltip overlay="test">
+      <ant-button>tooltip</ant-button>
+    </ant-tooltip>
+  </div> -->
+  <div>
+    <h2>Affix</h2>
+    <ant-affix>
+      <ant-button type="primary">fixed</ant-button>
+    </ant-affix>
+  </div>
+  <div>
+    <h2>Breadcrumb</h2>
+    <ant-breadcrumb>
+      <ant-breadcrumb-item href="192.168.1.1">Frist</ant-breadcrumb-item>
+      <ant-breadcrumb-item>Second</ant-breadcrumb-item>
+    </ant-breadcrumb>
+  </div>
+  <!-- <div>
+    <h2>Progress</h2>
+    <ant-progress type="line" [percent]="30"></ant-progress>
+  </div> -->
   <div>
     <h2>Alert</h2>
     <ant-alert type="error">
@@ -38,10 +62,10 @@
     <ant-button type="dashed">dashed</ant-button>
     <ant-button type="danger">danger</ant-button>
   </div>
-  <div>
+  <!-- <div>
     <h2>Rate</h2>
     <ant-rate [value]="2"></ant-rate>
-  </div>
+  </div> -->
   <div>
     <h2>Switch</h2>
     <ant-switch></ant-switch>

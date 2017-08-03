@@ -1,8 +1,8 @@
 <div [class]="progressClassName">
   <div *ngIf="type === 'line'">
-    <div class="prefixCls+'-outer'">
-      <div class="prefixCls+'-inner'">
-        <div class="`prefixCls+'-bg'" [ngStyle]="{width: percent+'%',height: strokeWidth || 10}"></div>
+    <div [class]="prefixCls+'-outer'">
+      <div [class]="prefixCls+'-inner'">
+        <div [class]="prefixCls+'-bg'" [ngStyle]="{width: percent+'%',height: strokeWidth || 10}"></div>
       </div>
     </div>
     <span [class]="prefixCls+'-text'">

@@ -1,0 +1,12 @@
+<div>
+  <div [ngStyle]={zIndex:zIndex} [class]="prefixCls+'-mask '+prefixCls+'-mask-hidden'">
+
+  </div>
+  <base-align>
+    <div [class]="innerClassName">
+      <div [class]="prefixCls+'-content'">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </base-align>
+</div>

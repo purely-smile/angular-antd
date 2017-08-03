@@ -1,0 +1,11 @@
+<div *ngFor="let x of noticeList" [class]="noticeClassName">
+  <div [class]="noticePrefixCls+'-content'">
+    <div [class]="prefixCls+'-custom-content '+prefixCls+'-'+x.type">
+      <ant-icon [type]="iconTypeObj[x.type]"></ant-icon>
+      <span>{{x.content}}</span>
+    </div>
+  </div>
+  <a *ngIf="closable" tabIndex="0" (click)="close()" [class]="noticePrefixCls+'-close'">
+      <span [class]="noticePrefixCls+'-close-x'"></span>
+    </a>
+</div>

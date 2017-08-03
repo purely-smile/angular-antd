@@ -31,7 +31,9 @@ export class AntProgressComponent implements OnInit {
     exception: '#ff5500',
     success: '#87d068'
   };
-  ngOnInit() {}
+  ngOnInit() {
+    this.getProgressClassName();
+  }
   getProgressClassName() {
     const {
       prefixCls,
@@ -46,8 +48,8 @@ export class AntProgressComponent implements OnInit {
       gapPosition,
       gapDegree
     } = this;
-    const progressStatus =
-      percent >= 100 && !status ? 'success' : status || 'normal';
+    const progressStatus = (this.progressStatus =
+      percent >= 100 && !status ? 'success' : status || 'normal');
     const textFormatter = format || (percentNumber => `${percentNumber}%`);
     if (showInfo) {
       this.iconType =

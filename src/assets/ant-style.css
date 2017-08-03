@@ -4762,11 +4762,11 @@ textarea.ant-input {
 .ant-breadcrumb a:hover {
   color: #49a9ee;
 }
-.ant-breadcrumb > span:last-child {
+.ant-breadcrumb > ant-breadcrumb-item:last-child {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.65);
 }
-.ant-breadcrumb > span:last-child .ant-breadcrumb-separator {
+.ant-breadcrumb > ant-breadcrumb-item:last-child  .ant-breadcrumb-separator {
   display: none;
 }
 .ant-breadcrumb-separator {
