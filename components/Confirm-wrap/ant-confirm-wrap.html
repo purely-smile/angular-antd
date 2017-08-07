@@ -1,0 +1,23 @@
+<div *ngIf="showConfirm">
+  <div class="ant-modal-mask"></div>
+  <div (click)="handleCancel()" class="ant-modal-wrap">
+    <div stop-propagation [style.width.px]="contentWidth" class="ant-modal ant-confirm ant-confirm-confirm">
+      <div class="ant-modal-content">
+        <button class="ant-modal-close"><span class="ant-modal-close-x"></span></button>
+        <div class="ant-modal-body">
+          <div class="ant-confirm-body-wrapper">
+            <div class="ant-confirm-body">
+              <i class="anticon anticon-question-circle"></i>
+              <span class="ant-confirm-title">{{title}}</span>
+              <div class="ant-confirm-content">{{content}}</div>
+            </div>
+            <div class="ant-confirm-btns">
+              <ant-button (click)="handleCancel()">{{cancelText}}</ant-button>
+              <ant-button (click)="handleOk()" type="primary">{{okText}}</ant-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

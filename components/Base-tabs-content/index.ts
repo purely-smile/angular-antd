@@ -1,0 +1,1 @@
+export * from './base-tabs-content-component'

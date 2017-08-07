@@ -8,17 +8,18 @@ import {
   OnDestroy,
   AfterContentInit
 } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import classNames from 'classnames';
 import { BaseNoticeComponent } from '../Base-notice';
 import { NotificationDirective } from '../../directives/notification';
 import { MessageService } from '../../services';
 
 @Component({
-  selector: 'notification-wrap',
-  templateUrl: './notification-wrap.html',
-  styleUrls: ['./notification-wrap.scss']
+  selector: 'message-wrap',
+  templateUrl: './message-wrap.html',
+  styleUrls: ['./message-wrap.scss']
 })
-export class NotificationWrapComponent
+export class MessageWrapComponent
   implements OnInit, OnDestroy, AfterViewInit, AfterContentInit {
   @Input() prefixCls = 'ant-message';
   @Input() className: string;
@@ -29,7 +30,7 @@ export class NotificationWrapComponent
   };
   @ViewChild(NotificationDirective) notificationHost: NotificationDirective;
   public notificationClassName: string;
-  private addMessageSubscribe;
+  private addMessageSubscribe: Subscription;
   public timmer;
   constructor(
     public componentFactoryResolver: ComponentFactoryResolver,
@@ -40,8 +41,9 @@ export class NotificationWrapComponent
     this.registerSubscribes();
   }
   ngOnDestroy() {
-    const { timmer } = this;
+    const { timmer, addMessageSubscribe } = this;
     timmer && clearTimeout(timmer);
+    addMessageSubscribe && addMessageSubscribe.unsubscribe();
   }
   ngAfterViewInit() {}
   ngAfterContentInit() {

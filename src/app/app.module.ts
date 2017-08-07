@@ -2,10 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TooltipDirective, NotificationDirective } from '../../directives';
-import { MessageService } from '../../services';
+import {
+  TooltipDirective,
+  NotificationDirective,
+  ModalHostDirective,
+  StopPropagationDirective
+} from '../../directives';
+import { MessageService, ModalService } from '../../services';
 import {
   IconComponent,
   ButtonComponent,
@@ -32,7 +38,23 @@ import {
   AntTooltipComponent,
   AntTooltipWrapComponent,
   BaseNoticeComponent,
-  NotificationWrapComponent
+  MessageWrapComponent,
+  AntModalWrapComponent,
+  AntConfirmWrapComponent,
+  AntSpinComponent,
+  AntBackTopComponent,
+  AntNotificationComponent,
+  AntInputComponent,
+  AntTextareaComponent,
+  AntInputGroupComponent,
+  AntInputNumberComponent,
+  AntCardComponent,
+  AntTimeLineComponent,
+  AntTimeLineItemComponent,
+  AntTagComponent,
+  BaseTabsNavComponent,
+  AntTabsComponent,
+  BaseTabsContentComponent
 } from '../../components';
 
 @NgModule({
@@ -65,11 +87,29 @@ import {
     AntTooltipWrapComponent,
     BaseNoticeComponent,
     NotificationDirective,
-    NotificationWrapComponent
+    MessageWrapComponent,
+    AntModalWrapComponent,
+    ModalHostDirective,
+    StopPropagationDirective,
+    AntConfirmWrapComponent,
+    AntSpinComponent,
+    AntBackTopComponent,
+    AntNotificationComponent,
+    AntInputComponent,
+    AntTextareaComponent,
+    AntInputGroupComponent,
+    AntInputNumberComponent,
+    AntCardComponent,
+    AntTimeLineComponent,
+    AntTimeLineItemComponent,
+    AntTagComponent,
+    BaseTabsNavComponent,
+    AntTabsComponent,
+    BaseTabsContentComponent
   ],
-  imports: [BrowserModule],
-  providers: [MessageService],
+  imports: [BrowserModule, FormsModule],
+  providers: [MessageService, ModalService],
   bootstrap: [AppComponent],
-  entryComponents: [BaseNoticeComponent]
+  entryComponents: [BaseNoticeComponent, AntSwitchComponent]
 })
 export class AppModule {}

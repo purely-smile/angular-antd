@@ -1,0 +1,6 @@
+<div *ngIf="!closed" [class]="tagClassName">
+  <span [class]="prefixCls+'-text'">
+    <ng-content></ng-content>
+  </span>
+  <ant-icon (click)="handleColose($event)" *ngIf="closable" type="cross"></ant-icon>
+</div>

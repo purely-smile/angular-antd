@@ -1,0 +1,14 @@
+<div [class]="inputNumberClassName">
+  <div unselectable [class]="prefixCls+'-handler-wrap'">
+    <span (click)="handleUp()" [class]="upClassName">
+      <span class="ant-input-number-handler-up-inner"></span>
+    </span>
+    <span (click)="handleDown()" [class]="downClassName">
+      <span class="ant-input-number-handler-down-inner"></span>
+    </span>
+  </div>
+  <div [class]="prefixCls+'-input-wrap'">
+    <input (focus)="handleFocus()" (blur)="handleBlur()" (change)="handleChange()" [(ngModel)]="value" [disabled]="disabled"
+      [min]="min" [max]="max" class="ant-input-number-input" type="number" autocomplete="off">
+  </div>
+</div>

@@ -1,1 +1,1 @@
-export * from './notification-wrap-component'
+export * from './ant-notification-component'

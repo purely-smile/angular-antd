@@ -1,0 +1,33 @@
+<div [class]="cardClassName">
+  <div *ngIf="title" [class]="prefixCls+'-head'">
+    <h3 [class]="prefixCls+'-head-title'">{{title}}</h3>
+  </div>
+  <div *ngIf="extra" [class]="prefixCls+'-extra'">
+    {{extra}}
+  </div>
+  <div [ngStyle]="bodyStyle" [class]="prefixCls+'-body'">
+    <div *ngIf="!loading">
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="loading">
+      <p [class]="prefixCls+'-loading-block'" [ngStyle]="{ width: '94%' }"></p>
+      <p>
+        <span [class]="prefixCls+'-loading-block'" [ngStyle]="{ width: '28%' }"></span>
+        <span [class]="prefixCls+'-loading-block'" [ngStyle]="{ width: '62%' }"></span>
+      </p>
+      <p>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '22%' }"></span>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '66%' }"></span>
+      </p>
+      <p>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '56%' }"></span>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '39%' }"></span>
+      </p>
+      <p>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '21%' }"></span>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '15%' }"></span>
+        <span [class]="prefixCls-+'loading-block'" [ngStyle]="{ width: '40%' }"></span>
+      </p>
+    </div>
+  </div>
+</div>

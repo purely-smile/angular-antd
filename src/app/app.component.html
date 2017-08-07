@@ -1,9 +1,105 @@
 <div>
   <div>
+    <h2>Tabs</h2>
+    <ant-tabs [navs]="['tab1','tab2']" [(value)]="tabValue">
+      <p *ngIf="tabValue===0">tab1 content</p>
+      <p *ngIf="tabValue===1">tab2 content</p>
+    </ant-tabs>
+  </div>
+  <div>
+    <h2>Tag</h2>
+    <ant-tag>标签1</ant-tag>
+    <ant-tag color="red">标签2</ant-tag>
+    <ant-tag color="green" [closable]="true">可关闭</ant-tag>
+  </div>
+  <div>
+    <h2>TimeLine</h2>
+    <ant-time-line>
+      <ant-time-line-item>
+        <p>time line content</p>
+      </ant-time-line-item>
+      <ant-time-line-item [last]="true">
+        <p>time line content</p>
+        <p>time line content</p>
+        <p>time line content</p>
+      </ant-time-line-item>
+    </ant-time-line>
+  </div>
+  <div>
+    <h2>Card</h2>
+    <ant-card title="card title">
+      <p>card content</p>
+      <p>card content</p>
+      <p>card content</p>
+      <p>card content</p>
+      <p>card content</p>
+    </ant-card>
+  </div>
+  <div>
+    <h2>InputNumber</h2>
+    <ant-input-number size="small" [min]="1" [max]="10" [precision]="1" [(value)]="inputNumberValue"></ant-input-number>
+    <ant-input-number size="small" [min]="1" [max]="10" [precision]="1" [(value)]="inputNumberValue"></ant-input-number>
+    <ant-input-number size="large" [min]="1" [max]="10" [precision]="1" [(value)]="inputNumberValue"></ant-input-number>
+  </div>
+  <div>
+    <h2>Textarea</h2>
+    <ant-textarea [(value)]="textareaValue" placeholder="请输入内容"></ant-textarea>
+    <i>{{textareaValue}}</i>
+  </div>
+  <div>
+    <h2>Input</h2>
+    <ant-input-group>
+      <ant-input (onSearch)="handleInputSearch($event)" suffix="search"></ant-input>
+    </ant-input-group>
+    <br>
+    <ant-input-group>
+      <ant-input [(value)]="inputValue" (onPressEnter)="handleInputEnter($event)" prefix="user"></ant-input>
+    </ant-input-group>
+    <br>
+    <ant-input-group>
+      <ant-input [(value)]="inputValue" (onPressEnter)="handleInputEnter($event)" addonBefore="http://"></ant-input>
+    </ant-input-group>
+    <br>
+    <ant-input-group>
+      <ant-input [(value)]="inputValue" (onPressEnter)="handleInputEnter($event)"></ant-input>
+    </ant-input-group>
+  </div>
+  <div>
+    <h2>Notification</h2>
+    <ant-button (click)="showNotification('topLeft')">左上</ant-button>
+    <ant-button (click)="showNotification('topRight')">右上</ant-button>
+    <ant-button (click)="showNotification('bottomLeft')">左下</ant-button>
+    <ant-button (click)="showNotification('bottomRight')">右下</ant-button>
+  </div>
+  <div>
+    <h2>Spin</h2>
+    <ant-button (click)="spining=true">打开spin</ant-button>
+    <ant-button (click)="spining=false">关闭spin</ant-button>
+    <ant-button (click)="spinSize='small'">small</ant-button>
+    <ant-button (click)="spinSize='default'">default</ant-button>
+    <ant-button (click)="spinSize='large'">large</ant-button>
+    <ant-spin [delay]="2000" [size]="spinSize" [spining]="spining" tip="加载中...">
+      <p>spin text</p>
+      <p>spin text</p>
+      <p>spin text</p>
+      <p>spin text</p>
+      <p>spin text</p>
+    </ant-spin>
+  </div>
+  <div>
+    <h2>Modal</h2>
+    <ant-button (click)="showModal()">打开modal</ant-button>
+    <ant-button (click)="showConfirm()">confirm</ant-button>
+  </div>
+  <div>
     <h2>Message</h2>
     <ant-button (click)="showMessage()">显示message</ant-button>
   </div>
-  <notification-wrap></notification-wrap>
+  <ant-notification></ant-notification>
+  <ant-confirm-wrap></ant-confirm-wrap>
+  <ant-modal-wrap></ant-modal-wrap>
+  <message-wrap></message-wrap>
+  <ant-back-top></ant-back-top>
   <!-- <div>
     <h2>Tooltip</h2>
     <ant-tooltip overlay="test">

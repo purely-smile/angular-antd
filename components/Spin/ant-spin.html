@@ -1,0 +1,18 @@
+<div class="ant-spin-nested-loading">
+  <div *ngIf="spining">
+    <div [class]="spinClassName">
+      <span [class]="prefixCls+'-dot'">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+      <div *ngIf="tip" [class]="prefixCls+'-text'">
+        {{tip}}
+      </div>
+    </div>
+  </div>
+  <div [class]="containerClassName">
+    <ng-content></ng-content>
+  </div>
+</div>

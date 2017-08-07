@@ -1,0 +1,22 @@
+<div [hidden]="!showModal">
+  <div class="ant-modal-mask"></div>
+  <div (click)="handleCancel()" class="ant-modal-wrap">
+    <div [style.width.px]="modalWidth" class="ant-modal">
+      <div stop-propagation class="ant-modal-content">
+        <div class="ant-modal-header">
+          <div class="ant-modal-title">{{title}}</div>
+        </div>
+        <button (click)="handleCancel()" class="ant-modal-close">
+          <span class="ant-modal-close-x"></span>
+        </button>
+        <div class="ant-modal-body">
+          <ng-template modal-host></ng-template>
+        </div>
+        <div class="ant-modal-footer">
+          <ant-button (click)="handleCancel()">取消</ant-button>
+          <ant-button (click)="handleOk()" type="primary">确定</ant-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div [ngStyle]="wrapStyle">
+  <span *ngIf="addonBefore || addonAfter" [class]="prefixCls+'-group-wrapper'">
+  <span [class]="prefixClassName">
+    <span *ngIf="addonBefore" [class]="addOnClassName">{{addonBefore}}</span>
+  <input [(ngModel)]="value" (keyup.enter)="handleEnter($event)" *ngIf="!(!!prefix || !!suffix)" [placeholder]="placeholder"
+    [class]="inputClassName" [type]="type">
+  <span *ngIf="addonAfter" [class]="addOnClassName">{{addonAfter}}</span>
+  </span>
+  </span>
+  <input [(ngModel)]="value" (keyup.enter)="handleEnter($event)" [placeholder]="placeholder" *ngIf="!addonBefore && !addonAfter && !prefix && !suffix"
+    [class]="inputClassName" [type]="type">
+  <span *ngIf="prefix || suffix" [class]="prefixCls+'-affix-wrapper'">
+    <span class="ant-input-prefix" *ngIf="prefix">
+      <ant-icon [type]="prefix"></ant-icon>
+    </span>
+  <input [(ngModel)]="value" (keyup.enter)="handleEnter($event)" [placeholder]="placeholder" [class]="inputClassName" [type]="type">
+  <span class="ant-input-suffix" *ngIf="suffix">
+      <ant-icon (click)="handleSearch($event)" [class]="suffixIconClassName"  [type]="suffix"></ant-icon>
+    </span>
+  </span>
+</div>

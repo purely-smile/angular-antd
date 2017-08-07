@@ -1,0 +1,1 @@
+export * from './ant-back-top-component'

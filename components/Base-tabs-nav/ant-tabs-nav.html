@@ -1,0 +1,18 @@
+<div [class]="prefixCls+'-bar'">
+  <div class="ant-tabs-nav-container">
+    <!-- <span unselectable class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled">
+        <span class="ant-tabs-tab-prev-icon"></span>
+    </span>
+    <span unselectable class="ant-tabs-tab-next ant-tabs-tab-btn-disabled">
+        <span class="ant-tabs-tab-next-icon"></span>
+    </span> -->
+    <div class="ant-tabs-nav-wrap">
+      <div class="ant-tabs-nav-scroll">
+        <div class="ant-tabs-nav ant-tabs-nav-animated">
+          <div [ngStyle]="inkBarStyle" class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"></div>
+          <div (click)="changeTab(i)" #navEl *ngFor="let x of navs; let i = index" class="ant-tabs-tab">{{x}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

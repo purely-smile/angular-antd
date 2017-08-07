@@ -1,0 +1,1 @@
+export * from './ant-input-number-component'

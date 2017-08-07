@@ -1,0 +1,18 @@
+<div *ngIf="showNotification">
+  <div [ngStyle]="style" [class]="outerClassName">
+    <div>
+      <div class="ant-notification-notice ant-notification-notice-closeable">
+        <div class="ant-notification-notice-content">
+          <div [class]="iconTypeClassName">
+            <ant-icon [class]="iconClassName" *ngIf="iconType" [type]="iconType"></ant-icon>
+            <div class="ant-notification-notice-message">{{message}}</div>
+            <div class="ant-notification-notice-description">{{description}}</div>
+          </div>
+        </div>
+        <a (click)="close()" class="ant-notification-notice-close">
+          <span class="ant-notification-notice-close-x"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
