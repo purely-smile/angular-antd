@@ -11,7 +11,7 @@ import {
   ModalHostDirective,
   StopPropagationDirective
 } from '../../directives';
-import { MessageService, ModalService } from '../../services';
+import { MessageService, ModalService, TooltipService } from '../../services';
 import {
   IconComponent,
   ButtonComponent,
@@ -54,7 +54,12 @@ import {
   AntTagComponent,
   BaseTabsNavComponent,
   AntTabsComponent,
-  BaseTabsContentComponent
+  BaseTabsContentComponent,
+  AntCollapseComponent,
+  AntCollapsePanelComponent,
+  AntBadgeComponent,
+  AntRowComponent,
+  AntColComponent
 } from '../../components';
 
 @NgModule({
@@ -105,10 +110,15 @@ import {
     AntTagComponent,
     BaseTabsNavComponent,
     AntTabsComponent,
-    BaseTabsContentComponent
+    BaseTabsContentComponent,
+    AntCollapseComponent,
+    AntCollapsePanelComponent,
+    AntBadgeComponent,
+    AntRowComponent,
+    AntColComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [MessageService, ModalService],
+  providers: [MessageService, ModalService, TooltipService],
   bootstrap: [AppComponent],
   entryComponents: [BaseNoticeComponent, AntSwitchComponent]
 })

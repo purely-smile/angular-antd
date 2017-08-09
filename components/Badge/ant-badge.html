@@ -1,0 +1,10 @@
+<span [class]="badgeClassName">
+  <span *ngIf="status">
+    <span [class]="statusClassName"></span>
+<span [class]="prefixCls+'-status-text'">{{text}}</span>
+</span>
+<ng-content></ng-content>
+<sup *ngIf="!status" [class]="subClassName" [title]="displayCount">
+       <span class="ant-scroll-number-only">{{displayCount}}</span>
+</sup>
+</span>

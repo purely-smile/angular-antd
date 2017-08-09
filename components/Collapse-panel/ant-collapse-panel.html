@@ -1,0 +1,10 @@
+<div [class]="itemClassName">
+  <div (click)="toggleItem()" [class]="headerClassName">
+    <i *ngIf="showArrow" class="arrow"></i> {{header}}
+  </div>
+  <div [class]="contentClassName">
+    <div [class]="prefixCls+'-content-box'">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

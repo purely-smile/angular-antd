@@ -1,8 +1,8 @@
-<base-trigger [prefixCls]="prefixCls" [action]="trigger" [builtinPlacements]="placements" [popupPlacement]="placements" [popupAlign]="align"
-  [destroyPopupOnHide]="destroyTooltipOnHide" [mouseLeaveDelay]="mouseLeaveDelay" [mouseEnterDelay]="mouseEnterDelay" [popupVisible]="visible"
-  [popupClassName]="overlayClassName" [overlay]="overlay">
-  <div [class]="prefixCls+'-open'">
-    <ng-content></ng-content>
-    <!-- <ng-template tooltip></ng-template> -->
+<div>
+  <div #el [ngStyle]="tooltipStyle" [class]="tooltipClassName">
+    <div [class]="prefixCls+'-content'">
+      <div [class]="prefixCls+'-arrow'"></div>
+      <div [class]="prefixCls+'-inner'">{{tip}}</div>
+    </div>
   </div>
-</base-trigger>
+</div>

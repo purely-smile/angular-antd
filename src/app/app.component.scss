@@ -1,3 +1,15 @@
 ant-input span {
   margin-bottom: 10px;
 }
+ant-row /deep/ .ant-row-flex > div  div {
+  background: #00a0e9;
+  padding: 16px 0;
+}
+
+ant-row /deep/ .ant-row-flex > div :nth-child(odd) div {
+  background: rgba(0, 160, 233, .7);
+}
+
+.text-center {
+  text-align: center;
+}

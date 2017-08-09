@@ -23,10 +23,25 @@ export class AppComponent implements OnInit {
   public spinSize;
   public inputValue = '';
   public tabValue = 0;
+  public placements = [
+    'top',
+    'left',
+    'right',
+    'bottom',
+    'topLeft',
+    'topRight',
+    'bottomLeft',
+    'bottomRight',
+    'leftTop',
+    'leftBottom',
+    'rightTop',
+    'rightBottom'
+  ];
   public inputStyle = {
     'margin-bottom': '10px'
   };
   public inputNumberValue = 1;
+  public collapseAccordion = false;
   ngOnInit() {}
   showMessage() {
     this.messageService.add({

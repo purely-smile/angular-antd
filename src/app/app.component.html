@@ -1,5 +1,63 @@
 <div>
   <div>
+    <h2>Tooltip</h2>
+    <div class="text-center">
+      <br><br>
+      <ant-button *ngFor="let x of placements" tooltip-host [tip]="x" [placement]="x">test {{x}}</ant-button>
+    </div>
+  </div>
+  <div>
+    <h2>Row and Col</h2>
+    <ant-row>
+      <ant-col [span]="12">col-12</ant-col>
+      <ant-col [span]="12">col-12</ant-col>
+    </ant-row>
+    <ant-row>
+      <ant-col [span]="8">col-8</ant-col>
+      <ant-col [span]="8">col-8</ant-col>
+      <ant-col [span]="8">col-8</ant-col>
+    </ant-row>
+    <ant-row>
+      <ant-col [span]="6">col-6</ant-col>
+      <ant-col [span]="6">col-6</ant-col>
+      <ant-col [span]="6">col-6</ant-col>
+      <ant-col [span]="6">col-6</ant-col>
+    </ant-row>
+  </div>
+  <div>
+    <h2>Badge</h2>
+    <ant-badge [count]="5">
+      <a href="#">link something</a>
+    </ant-badge>
+    <ant-badge [dot]="true">
+      <a href="#">link something</a>
+    </ant-badge>
+    <ant-badge status="processing" text="processing"></ant-badge>
+    <ant-badge status="error" text="error"></ant-badge>
+    <ant-badge status="warning" text="warning"></ant-badge>
+  </div>
+  <div>
+    <h2>Collapse</h2>
+    <div>
+      <ant-button (click)="collapseAccordion = !collapseAccordion">{{collapseAccordion?'关闭手风琴':'开启手风琴'}}</ant-button>
+    </div>
+    <br>
+    <ant-collapse [accordion]="collapseAccordion">
+      <ant-collapse-panel key="1" header="panel title 1">
+        <p>panel-content</p>
+        <p>panel-content</p>
+        <p>panel-content</p>
+        <p>panel-content</p>
+        <p>panel-content</p>
+      </ant-collapse-panel>
+      <ant-collapse-panel key="2" header="panel title 2">
+        <p>content 2</p>
+        <p>content 2</p>
+        <p>content 2</p>
+      </ant-collapse-panel>
+    </ant-collapse>
+  </div>
+  <div>
     <h2>Tabs</h2>
     <ant-tabs [navs]="['tab1','tab2']" [(value)]="tabValue">
       <p *ngIf="tabValue===0">tab1 content</p>
@@ -100,12 +158,7 @@
   <ant-modal-wrap></ant-modal-wrap>
   <message-wrap></message-wrap>
   <ant-back-top></ant-back-top>
-  <!-- <div>
-    <h2>Tooltip</h2>
-    <ant-tooltip overlay="test">
-      <ant-button>tooltip</ant-button>
-    </ant-tooltip>
-  </div> -->
+  <ant-tooltip-wrap></ant-tooltip-wrap>
   <div>
     <h2>Affix</h2>
     <ant-affix>

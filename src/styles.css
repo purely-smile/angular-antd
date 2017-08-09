@@ -1,7 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+/* .ant-row-flex > div :nth-child(odd) div {
+  background: rgba(0, 160, 233, .7);
+}
+
+.ant-row-flex > div  div {
+  background: #00a0e9;
+  padding: 16px 0;
+} */

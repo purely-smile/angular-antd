@@ -4,11 +4,12 @@ import {
   OnInit,
   AfterViewInit,
   ViewChild,
-  ComponentFactoryResolver,
   OnDestroy
 } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+
 import { AntTooltipComponent } from '../Tooltip';
-import { TooltipDirective } from '../../directives/tooltip';
+import { TooltipService } from '../../services';
 
 @Component({
   selector: 'ant-tooltip-wrap',
@@ -17,22 +18,40 @@ import { TooltipDirective } from '../../directives/tooltip';
 })
 export class AntTooltipWrapComponent
   implements OnInit, OnDestroy, AfterViewInit {
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
-  @ViewChild(TooltipDirective) tooltipHost: TooltipDirective;
-  ngOnInit() {}
-  ngOnDestroy() {}
-  ngAfterViewInit() {
-    this.loadComponent();
+  constructor(private tooltipService: TooltipService) {}
+  public tooltipSub: Subscription;
+  public showTooltip = false;
+  public tip: string;
+  public tooltipStyleObj: Object;
+  public placement:
+    | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'topLeft'
+    | 'topRight'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'leftTop'
+    | 'leftBottom'
+    | 'rightTop'
+    | 'rightBottom' = 'top';
+  ngOnInit() {
+    this.registerSubscribe();
   }
-  loadComponent() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      AntTooltipComponent
-    );
-    const viewContainerRef = this.tooltipHost.viewContainerRef;
-    viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-    Object.assign(componentRef, {
-      overlay: 'test'
+  ngOnDestroy() {}
+  ngAfterViewInit() {}
+  registerSubscribe() {
+    this.tooltipService.showToolTip.subscribe(config => {
+      const { tip, placement, style } = config;
+      this.tip = tip;
+      this.placement = placement;
+      this.tooltipStyleObj = style;
+      this.showTooltip = true;
+    });
+
+    this.tooltipService.hideToolTip.subscribe(() => {
+      this.showTooltip = false;
     });
   }
 }

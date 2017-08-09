@@ -40,3 +40,8 @@ export * from './Tag';
 export * from './Tabs';
 export * from './Base-tabs-nav';
 export * from './Base-tabs-content';
+export * from './Collapse';
+export * from './Collapse-panel';
+export * from './Badge';
+export * from './Row';
+export * from './Col';
