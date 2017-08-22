@@ -1,0 +1,13 @@
+<div stop-propagation [ngStyle]="style" *ngIf="showPicker" [class]="datePickerClassName">
+  <div [class]="prefixCls" tabindex="0">
+    <div [class]="prefixCls+'-panel'">
+      <div [class]="prefixCls+'-input-wrap'">
+        <div [class]="prefixCls+'-date-input-wrap'">
+          <input readonly [class]="prefixCls+'-input'" [placeholder]="placeholder">
+        </div>
+        <a [class]="prefixCls+'-clear-btn'" role="button" title="Clear"></a>
+      </div>
+      <base-date-picker></base-date-picker>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div *ngIf="datePanel" [class]="prefixCls+'-date-panel'">
+  <div [class]="prefixCls+'-header'">
+    <div style="position: relative;">
+      <a (click)="preYear()" [class]="prefixCls+'-prev-year-btn'" role="button" title="上一年 (Control + left)"></a>
+      <a (click)="preMonth()" [class]="prefixCls+'-prev-month-btn'" role="button" title="上个月 (PageUp)"></a>
+      <span [class]="prefixCls+'-my-select'">
+            <a (click)="showMonthPanel()" [class]="prefixCls+'-month-select'" role="button" title="Choose a month">{{monthNames[currentDate.month()]}}</a>
+            <a (click)="showYearPanel()" [class]="prefixCls+'-year-select'" role="button" title="Choose a year">{{currentDate.year()}}</a>
+          </span>
+      <a (click)="nextMonth()" [class]="prefixCls+'-next-month-btn'" title="下个月 (PageDown)"></a>
+      <a (click)="nextYear()" [class]="prefixCls+'-next-year-btn'" title="下一年 (Control + right)"></a></div>
+  </div>
+  <div [class]="prefixCls+'-body'">
+    <table [class]="prefixCls+'-table'" cellspacing="0" role="grid">
+      <thead>
+        <tr role="row">
+          <th *ngFor="let x of weekNames" role="columnheader" [title]="x.name" [class]="prefixCls+'-column-header'">
+            <span [class]="prefixCls+'-column-header-inner'">{{x.shortName}}</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="prefixCls+-tbody">
+        <tr *ngFor="let x of datePickerService.dates" role="row" class="">
+          <td (click)="setDate(y)" *ngFor="let y of x" role="gridcell" [title]="
+                  y.format('YYYY-MM-DD')" [class]="prefixCls+'-cell'" [ngClass]="{
+                    'ant-calendar-last-month-cell':currentDate.isAfter(y,'month'),
+                    'ant-calendar-next-month-btn-day':currentDate.isBefore(y,'month'),
+                    'ant-calendar-today':today.isSame(y,'day')
+                  }">
+            <div [class]="prefixCls+'-date'">{{y.date()}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div [class]="prefixCls+'-footer'"><span [class]="prefixCls+'-footer-btn'"><a [class]="prefixCls+'-today-btn' " role="button" title="08/10/2017">今天</a></span></div>
+</div>
+<div *ngIf="yearPanel" [class]="prefixCls+'-date-panel'">
+  <div class="ant-calendar-header">
+    <div class="ant-calendar-year-panel">
+      <div>
+        <div class="ant-calendar-year-panel-header">
+          <a (click)="preRangeYear()" class="ant-calendar-year-panel-prev-decade-btn" role="button" title="上个年代(Page Up)"></a>
+          <a class="ant-calendar-year-panel-decade-select" role="button">
+              <span class="ant-calendar-year-panel-decade-select-content">{{yearPanelStart}}-{{yearPanelEnd}}</span><span class="ant-calendar-year-panel-decade-select-arrow">x</span></a>
+          <a (click)="nextRangeYear()" class="ant-calendar-year-panel-next-decade-btn" role="button" title="下个年代(Page Down)"></a>
+        </div>
+        <div class="ant-calendar-year-panel-body">
+          <table class="ant-calendar-year-panel-table" cellspacing="0" role="grid">
+            <tbody class="ant-calendar-year-panel-tbody">
+              <tr *ngFor="let x of years" role="row">
+                <td (click)="setYear(y.yearName)" [ngClass]="{
+                    'ant-calendar-year-panel-selected-cell':currentDate.year() === y.yearName,
+                    'ant-calendar-year-panel-last-decade-cell':yearPanelStart===y.yearName,
+                    'ant-calendar-year-panel-next-decade-cell':yearPanelEnd === y.yearName}" *ngFor="let y of x" role="gridcell"
+                  [title]="y.yearName" class="ant-calendar-year-panel-cell"><a class="ant-calendar-year-panel-year">{{y.yearName}}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="monthPanel" [class]="prefixCls+'-date-panel'">
+  <div class="ant-calendar-header">
+    <div class="ant-calendar-month-panel">
+      <div>
+        <div class="ant-calendar-month-panel-header"><a class="ant-calendar-month-panel-prev-year-btn" role="button" title="Last year (Control + left)"></a><a class="ant-calendar-month-panel-year-select"
+            role="button" title="Choose a year"><span class="ant-calendar-month-panel-year-select-content">2017</span><span class="ant-calendar-month-panel-year-select-arrow">x</span></a>
+          <a class="ant-calendar-month-panel-next-year-btn" role="button" title="Next year (Control + right)"></a>
+        </div>
+        <div class="ant-calendar-month-panel-body">
+          <table class="ant-calendar-month-panel-table" cellspacing="0" role="grid">
+            <tbody class="ant-calendar-month-panel-tbody">
+              <tr *ngFor="let x of months" role="row">
+                <td [ngClass]="{'ant-calendar-month-panel-selected-cell':currentDate.month() === y.index}" (click)="setMonth(y.index)" *ngFor="let y of x"
+                  role="gridcell" [title]="y.monthName" class="ant-calendar-month-panel-cell"><a class="ant-calendar-month-panel-month">{{y.monthName}}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

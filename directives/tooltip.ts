@@ -28,7 +28,7 @@ export class TooltipDirective {
   }
   @HostListener('mouseleave', ['$event'])
   onLeave(event: MouseEvent) {
-    // this.tooltipService.hide();
+    this.tooltipService.hide();
   }
   constructor(private tooltipService: TooltipService) {}
 }

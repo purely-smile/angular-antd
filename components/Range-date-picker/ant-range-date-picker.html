@@ -1,0 +1,9 @@
+<span class="ant-calendar-picker">
+  <span class="ant-calendar-picker-input ant-input">
+    <input readonly [(ngModel)]="startValue" [placeholder]="startPlaceholder" class="ant-calendar-range-picker-input">
+    <span class="ant-calendar-range-picker-separator"> ~ </span>
+<input readonly [(ngModel)]="endValue" [placeholder]="endPlaceholder" class="ant-calendar-range-picker-input">
+<i (click)="startValue=endValue=''" *ngIf="startValue && endValue" class="anticon anticon-cross-circle ant-calendar-picker-clear"></i>
+<span class="ant-calendar-picker-icon"></span>
+</span>
+</span>

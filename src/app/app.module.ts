@@ -11,7 +11,12 @@ import {
   ModalHostDirective,
   StopPropagationDirective
 } from '../../directives';
-import { MessageService, ModalService, TooltipService } from '../../services';
+import {
+  MessageService,
+  ModalService,
+  TooltipService,
+  DatePickerService
+} from '../../services';
 import {
   IconComponent,
   ButtonComponent,
@@ -59,7 +64,12 @@ import {
   AntCollapsePanelComponent,
   AntBadgeComponent,
   AntRowComponent,
-  AntColComponent
+  AntColComponent,
+  AntDatePickerComponent,
+  BaseDateTableComponent,
+  AntDatePickerWrapComponent,
+  AntRangeDatePickerComponent,
+  AntRangeDatePickerWrapComponent
 } from '../../components';
 
 @NgModule({
@@ -115,10 +125,15 @@ import {
     AntCollapsePanelComponent,
     AntBadgeComponent,
     AntRowComponent,
-    AntColComponent
+    AntColComponent,
+    AntDatePickerComponent,
+    BaseDateTableComponent,
+    AntDatePickerWrapComponent,
+    AntRangeDatePickerComponent,
+    AntRangeDatePickerWrapComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [MessageService, ModalService, TooltipService],
+  providers: [MessageService, ModalService, TooltipService, DatePickerService],
   bootstrap: [AppComponent],
   entryComponents: [BaseNoticeComponent, AntSwitchComponent]
 })

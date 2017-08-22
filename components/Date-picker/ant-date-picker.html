@@ -1,0 +1,7 @@
+<span stop-propagation [class]="prefixCls">
+  <div>
+    <input [(ngModel)]="date" (focus)="show(input)"  #input [placeholder]="placeholder" type="text" readonly [class]="prefixCls+'input ant-input'">
+    <i (click)="date=''" *ngIf="date" class="anticon anticon-cross-circle ant-calendar-picker-clear"></i>
+    <span [class]="prefixCls+'-icon'"></span>
+</div>
+</span>
